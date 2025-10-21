@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      z-index: 10;
+      
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 15px;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+    }
+
+    nav ul li {
+      margin: 0 30px;
+    }
+
+    nav ul li a {
+      color: yellow;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: rgb(229, 229, 234);;
+    }
+
+
+#menu-button {
+      position: fixed;
+      font-weight: bold;
+      font-size: 30px;
+      align-items: center;
+      background-color: black;
+      border: none;
+      color: yellow;
+      margin-top: 5px;
+      margin-left: 20px;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+#menu-button:hover {
+    color: gray;
+}
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: black;
+      border-right: 2px solid yellow;
+      box-shadow: 5px 0 15px 2px;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 15;
+    }
+
+    .sidebar a {
+      font-weight: bold;
+      display: block;
+      color: yellow;
+      text-decoration: none;
+      padding-left: 55px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .sidebar a:hover {
+      color: black;
+      font-weight: light;
+      background-color: gray;
+    }
+
+    .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items:center;
+      gap: 150px;
+    }
+
+    .container-left {
+      padding: 100px 40px;
+      top: 50px;
+      left: 50px;
+      color: black;
+    }
+    .container-left h1 {
+      margin: 0;
+      font-size: 100px;
+    }
+    .container-left p {
+      font-size: 20px;
+      text-align: right;
+      padding-top: 30px;
+      line-height: 35px;
+    }
+    .container-right {
+      background: black;
+      border: 3px solid yellow;
+      border-radius: 15px;
+      padding: 25px;
+      width: 400px;
+      box-shadow: 5px 5px 5px 5px;
+    }
+
+    .container-right h2 {
+      text-align: center;
+      color: yellow;
+    }
+
+    label {
+      display: block;
+      color: yellow;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+    }
+    .name-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .gender-options {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 8px;
+    }
+    .gender-options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: normal;
+    }
+    .gender-options input {
+      width: auto;
+      margin: 0;
+    }
+
+    #submit {
+      background: yellow;
+      color: black;
+      border: 1.5px solid gray;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 8px;
+      width: 100%;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    #submit:hover {
+      background: black;
+      color: gray;
+      border: 1.5px solid black;
+    }
+  </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="./bio.html">HOME</a></li>
+            <li><a href="./bio.html#about">ABOUT</a></li>
+            <li><a href="./bio.html#passions">PASSIONS</a></li>
+            <li><a href="./bio.html#education">EDUCATION</a></li>
+            <li><a href="./bio.html#leisure">LEISURE</a></li>
+            <li><a href="./bio.html#contacts">CONTACTS</a></li>
+        </ul>
+    </nav>
+
+    <button id="menu-button">☰</button>
+
+        <div id="sidebar" class="sidebar">
+            <a href="./bio.html">Return</a>
+            <a href="./biopage_photos.html">Photos</a>
+            <a href="./biopage_work.html">Jobs</a>
+            <a href="./biopage_future.html">Future Plans</a>
+            <a href="./registration.html">Works</a>
+        </div>
+    <div class="container">
+      <div class="container-left">
+        <h1>STUDENT<br>REGISTRATION<br>FORM</h1>
+        <p>
+          Welcome to my <strong>Student Registration Page!</strong><br>
+          This is our first webpage making in our Introduction to Information Technology<br>
+          I link this Webpage to my AutoBiography Website so if you want to visit my website<br>
+          just click the burger button above and click Return!
+        </p>
+      </div>
+
+      <div class="container-right">
+        <h2>REGISTER</h2>
+        <form>
+          <label>Full Name:</label>
+          <div class="name-group">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+          </div>
+
+          <label>Email:</label>
+          <input type="email" placeholder="Enter email" required>
+
+          <label>Password:</label>
+          <input type="password" placeholder="Enter password" required>
+
+          <label>Gender:</label>
+          <div class="gender-options">
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+          </div>
+
+          <label>Birthday:</label>
+          <input type="date" required>
+
+          <label>Address:</label>
+          <input type="text" placeholder="Enter address" required>
+
+          <button id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      const menuButton = document.getElementById('menu-button');
+      const sidebar = document.getElementById('sidebar');
+
+      let sidebarOpen = false;
+
+      menuButton.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        if (!sidebarOpen) {
+          sidebar.style.width = '300px';
+          sidebarOpen = true;
+        } else {
+          sidebar.style.width = '0';
+          sidebarOpen = false;
+        }
+      });
+
+      sidebar.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+
+      document.addEventListener('click', () => {
+        if (sidebarOpen) {
+          sidebar.style.width = '0';
+          sidebarOpen = false;
+        }
+      });
+    </script>
+
+</body>
+</html>

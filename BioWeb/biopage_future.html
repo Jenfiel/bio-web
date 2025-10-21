@@ -1,0 +1,195 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: antiquewhite;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      z-index: 10;
+      
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 15px;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+    }
+
+    nav ul li {
+      margin: 0 30px;
+    }
+
+    nav ul li a {
+      color: yellow;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: rgb(229, 229, 234);;
+    }
+
+
+#menu-button {
+      position: fixed;
+      font-weight: bold;
+      font-size: 30px;
+      align-items: center;
+      background-color: black;
+      border: none;
+      color: yellow;
+      margin-top: 5px;
+      margin-left: 20px;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+#menu-button:hover {
+    color: gray;
+}
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: black;
+      border-right: 2px solid yellow;
+      box-shadow: 5px 0 15px 2px;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 15;
+    }
+
+    .sidebar a {
+      font-weight: bold;
+      display: block;
+      color: yellow;
+      text-decoration: none;
+      padding-left: 55px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .sidebar a:hover {
+      color: black;
+      font-weight: light;
+      background-color: gray;
+    }
+
+    .page {
+        height: 100%;
+        width: 100%;
+        align-content: end;
+        justify-items: center;
+        
+    }
+
+    .image {
+        background-image: url(./image/construct-removebg-preview.png);
+        background-repeat: no-repeat;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: auto 95%;
+        height: 700px;
+        width: 700px;
+        border: 3px solid antiquewhite;
+    }
+
+    .sign {
+        height: 150px;
+        width: 330px;
+        margin-top: 180px;
+        margin-left: 200px;
+    }
+
+    .sign h1 {
+        padding: 35px 40px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+
+  </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#passions">PASSIONS</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#leisure">LEISURE</a></li>
+            <li><a href="#contacts">CONTACTS</a></li>
+        </ul>
+    </nav>
+
+    <button id="menu-button">☰</button>
+
+        <div id="sidebar" class="sidebar">
+            <a href="./bio.html">Return</a>
+            <a href="./biopage_photos.html">Photos</a>
+            <a href="./biopage_work.html">Work</a>
+            <a href="./biopage_future.html">Future Plans</a>
+            <a href="./registration.html">Registration</a>
+        </div>
+    
+    <div class="page">
+        <div class="image">
+            <div class="sign">
+              <h1>Sorry, I just planning now</h1>
+            </div></div>
+    </div>
+
+    <script>
+      const menuButton = document.getElementById('menu-button');
+      const sidebar = document.getElementById('sidebar');
+
+      let sidebarOpen = false;
+
+      menuButton.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        if (!sidebarOpen) {
+          sidebar.style.width = '300px';
+          sidebarOpen = true;
+        } else {
+          sidebar.style.width = '0';
+          sidebarOpen = false;
+        }
+      });
+
+      sidebar.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+
+      document.addEventListener('click', () => {
+        if (sidebarOpen) {
+          sidebar.style.width = '0';
+          sidebarOpen = false;
+        }
+      });
+    </script>
+</body>
